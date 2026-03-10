@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "f71df265-06b2-4ee9-94c2-856d17bc7e9a",
+    "_postman_id": "a32b38f2-d0ba-4d94-a76d-36076a84099b",
     "name": "[Contract] loan-origination-api",
     "description": "API for managing loan application origination, underwriting decisions, and\ndocument collection in the Lending domain. This service handles the full\nlifecycle from application submission through approval or denial.\n\n**Authentication:**\n- Service-to-service: mTLS (mutual TLS)\n- Internal gateway: JWT token (Bearer token)\n\n**Rate Limits:**\n- Standard: 200 requests/minute\n- Batch operations: 50 requests/minute\n\n\nContact Support:\n Name: Lending Platform Team\n Email: lending-platform@example.com",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -195,7 +195,7 @@
                       ],
                       "cookie": [],
                       "responseTime": null,
-                      "body": "{\n  \"applicationId\": \"string\",\n  \"status\": \"in_progress\",\n  \"decision\": \"approved\",\n  \"riskScore\": 49,\n  \"evaluatedAt\": \"1960-05-30T16:38:48.252Z\"\n}"
+                      "body": "{\n  \"applicationId\": \"string\",\n  \"status\": \"failed\",\n  \"decision\": \"referred_to_manual\",\n  \"riskScore\": 71,\n  \"evaluatedAt\": \"1990-03-06T20:45:27.005Z\"\n}"
                     },
                     {
                       "name": "Application not found",
@@ -495,7 +495,7 @@
                       ],
                       "cookie": [],
                       "responseTime": null,
-                      "body": "{\n  \"id\": \"string\",\n  \"applicationId\": \"string\",\n  \"documentType\": \"string\",\n  \"fileName\": \"string\",\n  \"uploadedAt\": \"1979-10-19T03:14:11.979Z\",\n  \"verificationStatus\": \"pending\"\n}"
+                      "body": "{\n  \"id\": \"string\",\n  \"applicationId\": \"string\",\n  \"documentType\": \"string\",\n  \"fileName\": \"string\",\n  \"uploadedAt\": \"2019-08-04T10:53:49.217Z\",\n  \"verificationStatus\": \"verified\"\n}"
                     },
                     {
                       "name": "Invalid document or unsupported format",
@@ -705,7 +705,7 @@
                       ],
                       "cookie": [],
                       "responseTime": null,
-                      "body": "[\n  {\n    \"id\": \"string\",\n    \"applicationId\": \"string\",\n    \"documentType\": \"string\",\n    \"fileName\": \"string\",\n    \"uploadedAt\": \"2010-04-14T01:25:15.072Z\",\n    \"verificationStatus\": \"pending\"\n  },\n  {\n    \"id\": \"string\",\n    \"applicationId\": \"string\",\n    \"documentType\": \"string\",\n    \"fileName\": \"string\",\n    \"uploadedAt\": \"1971-11-05T23:36:02.121Z\",\n    \"verificationStatus\": \"rejected\"\n  }\n]"
+                      "body": "[\n  {\n    \"id\": \"string\",\n    \"applicationId\": \"string\",\n    \"documentType\": \"string\",\n    \"fileName\": \"string\",\n    \"uploadedAt\": \"1978-07-07T22:55:12.426Z\",\n    \"verificationStatus\": \"pending\"\n  },\n  {\n    \"id\": \"string\",\n    \"applicationId\": \"string\",\n    \"documentType\": \"string\",\n    \"fileName\": \"string\",\n    \"uploadedAt\": \"1947-02-03T01:56:31.418Z\",\n    \"verificationStatus\": \"verified\"\n  }\n]"
                     }
                   ]
                 }
@@ -861,7 +861,7 @@
                   ],
                   "cookie": [],
                   "responseTime": null,
-                  "body": "{\n  \"id\": \"string\",\n  \"applicantId\": \"string\",\n  \"productType\": \"string\",\n  \"requestedAmount\": 2851.634385121442,\n  \"termMonths\": 6775,\n  \"status\": \"submitted\",\n  \"createdAt\": \"1985-09-09T05:32:17.021Z\",\n  \"updatedAt\": \"1988-10-15T21:33:56.332Z\",\n  \"underwritingResult\": {\n    \"applicationId\": \"string\",\n    \"status\": \"in_progress\",\n    \"decision\": \"approved\",\n    \"riskScore\": 35,\n    \"evaluatedAt\": \"2010-02-06T07:54:58.699Z\"\n  }\n}"
+                  "body": "{\n  \"id\": \"string\",\n  \"applicantId\": \"string\",\n  \"productType\": \"string\",\n  \"requestedAmount\": 7922.350363678718,\n  \"termMonths\": 3033,\n  \"status\": \"approved\",\n  \"createdAt\": \"1967-12-14T18:25:39.013Z\",\n  \"updatedAt\": \"1952-08-31T23:11:27.460Z\",\n  \"underwritingResult\": {\n    \"applicationId\": \"string\",\n    \"status\": \"in_progress\",\n    \"decision\": \"denied\",\n    \"riskScore\": 79,\n    \"evaluatedAt\": \"1991-05-03T01:45:40.942Z\"\n  }\n}"
                 },
                 {
                   "name": "Application not found",
@@ -1076,7 +1076,7 @@
               ],
               "cookie": [],
               "responseTime": null,
-              "body": "{\n  \"id\": \"string\",\n  \"applicantId\": \"string\",\n  \"productType\": \"string\",\n  \"requestedAmount\": 2851.634385121442,\n  \"termMonths\": 6775,\n  \"status\": \"submitted\",\n  \"createdAt\": \"1985-09-09T05:32:17.021Z\",\n  \"updatedAt\": \"1988-10-15T21:33:56.332Z\",\n  \"underwritingResult\": {\n    \"applicationId\": \"string\",\n    \"status\": \"in_progress\",\n    \"decision\": \"approved\",\n    \"riskScore\": 35,\n    \"evaluatedAt\": \"2010-02-06T07:54:58.699Z\"\n  }\n}"
+              "body": "{\n  \"id\": \"string\",\n  \"applicantId\": \"string\",\n  \"productType\": \"string\",\n  \"requestedAmount\": 7922.350363678718,\n  \"termMonths\": 3033,\n  \"status\": \"approved\",\n  \"createdAt\": \"1967-12-14T18:25:39.013Z\",\n  \"updatedAt\": \"1952-08-31T23:11:27.460Z\",\n  \"underwritingResult\": {\n    \"applicationId\": \"string\",\n    \"status\": \"in_progress\",\n    \"decision\": \"denied\",\n    \"riskScore\": 79,\n    \"evaluatedAt\": \"1991-05-03T01:45:40.942Z\"\n  }\n}"
             },
             {
               "name": "Invalid application data",
@@ -1273,7 +1273,7 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/applications?status=submitted&productType=personal_loan&limit=25&offset=0",
+              "raw": "{{baseUrl}}/applications?status=withdrawn&productType=auto_loan&limit=25&offset=0",
               "host": [
                 "{{baseUrl}}"
               ],
@@ -1284,12 +1284,12 @@
                 {
                   "description": "Filter by application status",
                   "key": "status",
-                  "value": "submitted"
+                  "value": "withdrawn"
                 },
                 {
                   "description": "Filter by loan product type",
                   "key": "productType",
-                  "value": "personal_loan"
+                  "value": "auto_loan"
                 },
                 {
                   "key": "limit",
@@ -1320,7 +1320,7 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/applications?status=submitted&productType=personal_loan&limit=25&offset=0",
+                  "raw": "{{baseUrl}}/applications?status=withdrawn&productType=auto_loan&limit=25&offset=0",
                   "host": [
                     "{{baseUrl}}"
                   ],
@@ -1331,12 +1331,12 @@
                     {
                       "description": "Filter by application status",
                       "key": "status",
-                      "value": "submitted"
+                      "value": "withdrawn"
                     },
                     {
                       "description": "Filter by loan product type",
                       "key": "productType",
-                      "value": "personal_loan"
+                      "value": "auto_loan"
                     },
                     {
                       "key": "limit",
@@ -1360,7 +1360,7 @@
               ],
               "cookie": [],
               "responseTime": null,
-              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"applicantId\": \"string\",\n      \"productType\": \"string\",\n      \"requestedAmount\": 8417.236984662448,\n      \"termMonths\": 8933,\n      \"status\": \"denied\",\n      \"createdAt\": \"1999-03-28T07:11:22.790Z\",\n      \"updatedAt\": \"2007-05-23T07:55:10.559Z\",\n      \"underwritingResult\": {\n        \"applicationId\": \"string\",\n        \"status\": \"pending\",\n        \"decision\": \"denied\",\n        \"riskScore\": 68,\n        \"evaluatedAt\": \"1974-03-25T00:08:42.870Z\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"applicantId\": \"string\",\n      \"productType\": \"string\",\n      \"requestedAmount\": 4835.238516479918,\n      \"termMonths\": 9591,\n      \"status\": \"approved\",\n      \"createdAt\": \"2024-12-28T14:08:38.543Z\",\n      \"updatedAt\": \"1988-05-02T09:16:16.335Z\",\n      \"underwritingResult\": {\n        \"applicationId\": \"string\",\n        \"status\": \"failed\",\n        \"decision\": \"approved\",\n        \"riskScore\": 80,\n        \"evaluatedAt\": \"1955-02-04T20:25:48.318Z\"\n      }\n    }\n  ],\n  \"total\": 307,\n  \"limit\": 7638,\n  \"offset\": 9778\n}"
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"applicantId\": \"string\",\n      \"productType\": \"string\",\n      \"requestedAmount\": 4371.579400012198,\n      \"termMonths\": 6375,\n      \"status\": \"under_review\",\n      \"createdAt\": \"1950-09-03T13:03:23.630Z\",\n      \"updatedAt\": \"1971-03-01T04:04:14.615Z\",\n      \"underwritingResult\": {\n        \"applicationId\": \"string\",\n        \"status\": \"pending\",\n        \"decision\": \"denied\",\n        \"riskScore\": 20,\n        \"evaluatedAt\": \"1957-09-25T21:46:08.190Z\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"applicantId\": \"string\",\n      \"productType\": \"string\",\n      \"requestedAmount\": 3228.129280384142,\n      \"termMonths\": 2118,\n      \"status\": \"under_review\",\n      \"createdAt\": \"2011-12-28T07:14:13.464Z\",\n      \"updatedAt\": \"2009-11-06T17:19:15.630Z\",\n      \"underwritingResult\": {\n        \"applicationId\": \"string\",\n        \"status\": \"pending\",\n        \"decision\": \"referred_to_manual\",\n        \"riskScore\": 61,\n        \"evaluatedAt\": \"2010-10-06T18:00:51.062Z\"\n      }\n    }\n  ],\n  \"total\": 238,\n  \"limit\": 6500,\n  \"offset\": 5828\n}"
             }
           ]
         }

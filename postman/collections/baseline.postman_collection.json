@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "a3ad722f-918e-441b-bd93-92fe8e885caf",
+    "_postman_id": "58212cdc-c54e-42aa-9804-10557142d09e",
     "name": "[Baseline] loan-origination-api",
     "description": "API for managing loan application origination, underwriting decisions, and\ndocument collection in the Lending domain. This service handles the full\nlifecycle from application submission through approval or denial.\n\n**Authentication:**\n- Service-to-service: mTLS (mutual TLS)\n- Internal gateway: JWT token (Bearer token)\n\n**Rate Limits:**\n- Standard: 200 requests/minute\n- Batch operations: 50 requests/minute\n\n\nContact Support:\n Name: Lending Platform Team\n Email: lending-platform@example.com",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -120,7 +120,7 @@
                       ],
                       "cookie": [],
                       "responseTime": null,
-                      "body": "{\n  \"applicationId\": \"string\",\n  \"status\": \"in_progress\",\n  \"decision\": \"approved\",\n  \"riskScore\": 25,\n  \"evaluatedAt\": \"1953-03-27T18:09:41.819Z\"\n}"
+                      "body": "{\n  \"applicationId\": \"string\",\n  \"status\": \"failed\",\n  \"decision\": \"referred_to_manual\",\n  \"riskScore\": 6,\n  \"evaluatedAt\": \"1950-11-24T03:40:40.587Z\"\n}"
                     },
                     {
                       "name": "Application not found",
@@ -258,7 +258,7 @@
                         },
                         {
                           "key": "documentType",
-                          "value": "income_verification",
+                          "value": "identity",
                           "type": "text"
                         }
                       ]
@@ -311,7 +311,7 @@
                             },
                             {
                               "key": "documentType",
-                              "value": "income_verification",
+                              "value": "identity",
                               "type": "text"
                             }
                           ]
@@ -345,7 +345,7 @@
                       ],
                       "cookie": [],
                       "responseTime": null,
-                      "body": "{\n  \"id\": \"string\",\n  \"applicationId\": \"string\",\n  \"documentType\": \"string\",\n  \"fileName\": \"string\",\n  \"uploadedAt\": \"1958-05-31T00:18:26.176Z\",\n  \"verificationStatus\": \"pending\"\n}"
+                      "body": "{\n  \"id\": \"string\",\n  \"applicationId\": \"string\",\n  \"documentType\": \"string\",\n  \"fileName\": \"string\",\n  \"uploadedAt\": \"1967-12-01T08:00:34.737Z\",\n  \"verificationStatus\": \"pending\"\n}"
                     },
                     {
                       "name": "Invalid document or unsupported format",
@@ -371,7 +371,7 @@
                             },
                             {
                               "key": "documentType",
-                              "value": "income_verification",
+                              "value": "identity",
                               "type": "text"
                             }
                           ]
@@ -480,7 +480,7 @@
                       ],
                       "cookie": [],
                       "responseTime": null,
-                      "body": "[\n  {\n    \"id\": \"string\",\n    \"applicationId\": \"string\",\n    \"documentType\": \"string\",\n    \"fileName\": \"string\",\n    \"uploadedAt\": \"1950-03-31T00:12:47.543Z\",\n    \"verificationStatus\": \"verified\"\n  },\n  {\n    \"id\": \"string\",\n    \"applicationId\": \"string\",\n    \"documentType\": \"string\",\n    \"fileName\": \"string\",\n    \"uploadedAt\": \"2003-11-06T09:33:13.308Z\",\n    \"verificationStatus\": \"rejected\"\n  }\n]"
+                      "body": "[\n  {\n    \"id\": \"string\",\n    \"applicationId\": \"string\",\n    \"documentType\": \"string\",\n    \"fileName\": \"string\",\n    \"uploadedAt\": \"1997-04-22T06:15:29.134Z\",\n    \"verificationStatus\": \"pending\"\n  },\n  {\n    \"id\": \"string\",\n    \"applicationId\": \"string\",\n    \"documentType\": \"string\",\n    \"fileName\": \"string\",\n    \"uploadedAt\": \"1955-03-27T18:11:17.345Z\",\n    \"verificationStatus\": \"pending\"\n  }\n]"
                     }
                   ]
                 }
@@ -561,7 +561,7 @@
                   ],
                   "cookie": [],
                   "responseTime": null,
-                  "body": "{\n  \"id\": \"string\",\n  \"applicantId\": \"string\",\n  \"productType\": \"string\",\n  \"requestedAmount\": 7523.053902114259,\n  \"termMonths\": 7043,\n  \"status\": \"submitted\",\n  \"createdAt\": \"2018-12-08T02:57:48.222Z\",\n  \"updatedAt\": \"1963-06-22T01:17:38.358Z\",\n  \"underwritingResult\": {\n    \"applicationId\": \"string\",\n    \"status\": \"failed\",\n    \"decision\": \"approved\",\n    \"riskScore\": 28,\n    \"evaluatedAt\": \"1988-03-28T19:20:33.263Z\"\n  }\n}"
+                  "body": "{\n  \"id\": \"string\",\n  \"applicantId\": \"string\",\n  \"productType\": \"string\",\n  \"requestedAmount\": 7948.577872371796,\n  \"termMonths\": 4734,\n  \"status\": \"denied\",\n  \"createdAt\": \"2018-01-14T02:52:57.805Z\",\n  \"updatedAt\": \"2021-10-23T04:59:45.732Z\",\n  \"underwritingResult\": {\n    \"applicationId\": \"string\",\n    \"status\": \"pending\",\n    \"decision\": \"referred_to_manual\",\n    \"riskScore\": 92,\n    \"evaluatedAt\": \"1952-03-16T15:04:29.648Z\"\n  }\n}"
                 },
                 {
                   "name": "Application not found",
@@ -701,7 +701,7 @@
               ],
               "cookie": [],
               "responseTime": null,
-              "body": "{\n  \"id\": \"string\",\n  \"applicantId\": \"string\",\n  \"productType\": \"string\",\n  \"requestedAmount\": 7523.053902114259,\n  \"termMonths\": 7043,\n  \"status\": \"submitted\",\n  \"createdAt\": \"2018-12-08T02:57:48.222Z\",\n  \"updatedAt\": \"1963-06-22T01:17:38.358Z\",\n  \"underwritingResult\": {\n    \"applicationId\": \"string\",\n    \"status\": \"failed\",\n    \"decision\": \"approved\",\n    \"riskScore\": 28,\n    \"evaluatedAt\": \"1988-03-28T19:20:33.263Z\"\n  }\n}"
+              "body": "{\n  \"id\": \"string\",\n  \"applicantId\": \"string\",\n  \"productType\": \"string\",\n  \"requestedAmount\": 7948.577872371796,\n  \"termMonths\": 4734,\n  \"status\": \"denied\",\n  \"createdAt\": \"2018-01-14T02:52:57.805Z\",\n  \"updatedAt\": \"2021-10-23T04:59:45.732Z\",\n  \"underwritingResult\": {\n    \"applicationId\": \"string\",\n    \"status\": \"pending\",\n    \"decision\": \"referred_to_manual\",\n    \"riskScore\": 92,\n    \"evaluatedAt\": \"1952-03-16T15:04:29.648Z\"\n  }\n}"
             },
             {
               "name": "Invalid application data",
@@ -823,7 +823,7 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/applications?status=under_review&productType=business_loan&limit=25&offset=0",
+              "raw": "{{baseUrl}}/applications?status=denied&productType=auto_loan&limit=25&offset=0",
               "host": [
                 "{{baseUrl}}"
               ],
@@ -834,12 +834,12 @@
                 {
                   "description": "Filter by application status",
                   "key": "status",
-                  "value": "under_review"
+                  "value": "denied"
                 },
                 {
                   "description": "Filter by loan product type",
                   "key": "productType",
-                  "value": "business_loan"
+                  "value": "auto_loan"
                 },
                 {
                   "key": "limit",
@@ -870,7 +870,7 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/applications?status=under_review&productType=business_loan&limit=25&offset=0",
+                  "raw": "{{baseUrl}}/applications?status=denied&productType=auto_loan&limit=25&offset=0",
                   "host": [
                     "{{baseUrl}}"
                   ],
@@ -881,12 +881,12 @@
                     {
                       "description": "Filter by application status",
                       "key": "status",
-                      "value": "under_review"
+                      "value": "denied"
                     },
                     {
                       "description": "Filter by loan product type",
                       "key": "productType",
-                      "value": "business_loan"
+                      "value": "auto_loan"
                     },
                     {
                       "key": "limit",
@@ -910,7 +910,7 @@
               ],
               "cookie": [],
               "responseTime": null,
-              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"applicantId\": \"string\",\n      \"productType\": \"string\",\n      \"requestedAmount\": 6627.872232565801,\n      \"termMonths\": 2652,\n      \"status\": \"submitted\",\n      \"createdAt\": \"1952-05-22T19:49:13.574Z\",\n      \"updatedAt\": \"1996-08-07T02:34:17.507Z\",\n      \"underwritingResult\": {\n        \"applicationId\": \"string\",\n        \"status\": \"in_progress\",\n        \"decision\": \"approved\",\n        \"riskScore\": 6,\n        \"evaluatedAt\": \"1989-04-29T00:41:24.433Z\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"applicantId\": \"string\",\n      \"productType\": \"string\",\n      \"requestedAmount\": 461.4473766513405,\n      \"termMonths\": 913,\n      \"status\": \"submitted\",\n      \"createdAt\": \"2017-05-29T08:24:38.478Z\",\n      \"updatedAt\": \"2014-09-29T18:31:07.215Z\",\n      \"underwritingResult\": {\n        \"applicationId\": \"string\",\n        \"status\": \"failed\",\n        \"decision\": \"denied\",\n        \"riskScore\": 20,\n        \"evaluatedAt\": \"1976-03-02T09:05:09.029Z\"\n      }\n    }\n  ],\n  \"total\": 8953,\n  \"limit\": 5869,\n  \"offset\": 419\n}"
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"applicantId\": \"string\",\n      \"productType\": \"string\",\n      \"requestedAmount\": 1091.6486327307684,\n      \"termMonths\": 7502,\n      \"status\": \"under_review\",\n      \"createdAt\": \"2019-06-13T16:44:07.678Z\",\n      \"updatedAt\": \"1959-06-15T23:12:18.789Z\",\n      \"underwritingResult\": {\n        \"applicationId\": \"string\",\n        \"status\": \"completed\",\n        \"decision\": \"approved\",\n        \"riskScore\": 48,\n        \"evaluatedAt\": \"1962-06-02T17:17:19.373Z\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"applicantId\": \"string\",\n      \"productType\": \"string\",\n      \"requestedAmount\": 189.58947160557793,\n      \"termMonths\": 7528,\n      \"status\": \"withdrawn\",\n      \"createdAt\": \"1988-10-14T16:45:11.399Z\",\n      \"updatedAt\": \"1976-11-04T04:09:25.036Z\",\n      \"underwritingResult\": {\n        \"applicationId\": \"string\",\n        \"status\": \"failed\",\n        \"decision\": \"approved\",\n        \"riskScore\": 85,\n        \"evaluatedAt\": \"1949-06-25T00:07:11.767Z\"\n      }\n    }\n  ],\n  \"total\": 9170,\n  \"limit\": 1922,\n  \"offset\": 8163\n}"
             }
           ]
         }
