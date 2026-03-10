@@ -11,6 +11,9 @@ jobs:
     permissions:
       actions: write
       contents: write
+      pull-requests: write
+      deployments: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -20,13 +23,17 @@ jobs:
           project-name: loan-origination-api
           domain: lending
           domain-code: LEND
-          spec-url: 'https://raw.githubusercontent.com/<owner>/<repo>/<branch>/specs/loan-origination-api-openapi.yaml'
+          spec-url: 'https://raw.githubusercontent.com/peterparalikas-rgb/loan-origination-api/main/specs/loan-origination-api-openapi.yaml'
           environments-json: '["prod","staging","dev"]'
           env-runtime-urls-json: '{"prod":"https://lending-api.example.com/v1","staging":"https://lending-api-staging.example.com/v1","dev":"https://lending-api-dev.example.com/v1"}'
           system-env-map-json: '{}'
           governance-mapping-json: '{}'
           # Reuse the existing workspace from payment-refund-api (set these as repo variables after first refund run)
           workspace-id: ${{ vars.POSTMAN_WORKSPACE_ID }}
+          spec-id: ${{ vars.POSTMAN_SPEC_UID }}
+          baseline-collection-id: ${{ vars.POSTMAN_BASELINE_COLLECTION_UID }}
+          smoke-collection-id: ${{ vars.POSTMAN_SMOKE_COLLECTION_UID }}
+          contract-collection-id: ${{ vars.POSTMAN_CONTRACT_COLLECTION_UID }}
           postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
           postman-access-token: ${{ secrets.POSTMAN_ACCESS_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
