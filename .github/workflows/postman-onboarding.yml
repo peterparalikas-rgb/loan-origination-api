@@ -1,0 +1,33 @@
+name: Postman API Onboarding (Loan Origination)
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [postman-refund-success]
+
+jobs:
+  onboarding:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Postman API onboarding (Loan Origination)
+        uses: postman-cs/postman-api-onboarding-action@v0
+        with:
+          project-name: loan-origination-api
+          domain: lending
+          domain-code: LEND
+          spec-url: 'https://raw.githubusercontent.com/<owner>/<repo>/<branch>/specs/loan-origination-api-openapi.yaml'
+          environments-json: '["prod","staging","dev"]'
+          env-runtime-urls-json: '{"prod":"https://lending-api.example.com/v1","staging":"https://lending-api-staging.example.com/v1","dev":"https://lending-api-dev.example.com/v1"}'
+          system-env-map-json: '{}'
+          governance-mapping-json: '{}'
+          # Reuse the existing workspace from payment-refund-api (set these as repo variables after first refund run)
+          workspace-id: ${{ vars.POSTMAN_WORKSPACE_ID }}
+          postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-access-token: ${{ secrets.POSTMAN_ACCESS_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          gh-fallback-token: ${{ secrets.GH_FALLBACK_TOKEN }}
