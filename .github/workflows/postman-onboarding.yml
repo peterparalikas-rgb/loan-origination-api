@@ -29,12 +29,9 @@ jobs:
           system-env-map-json: '{}'
           governance-mapping-json: '{}'
           # Reuse the existing workspace from payment-refund-api (set these as repo variables after first refund run)
-          workspace-id: ${{ vars.POSTMAN_WORKSPACE_ID }}
-          spec-id: ${{ vars.POSTMAN_SPEC_UID }}
-          baseline-collection-id: ${{ vars.POSTMAN_BASELINE_COLLECTION_UID }}
-          smoke-collection-id: ${{ vars.POSTMAN_SMOKE_COLLECTION_UID }}
-          contract-collection-id: ${{ vars.POSTMAN_CONTRACT_COLLECTION_UID }}
           postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
           postman-access-token: ${{ secrets.POSTMAN_ACCESS_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           gh-fallback-token: ${{ secrets.GH_FALLBACK_TOKEN }}
+          workspace-id: ${{ vars.POSTMAN_WORKSPACE_ID }}
+          
